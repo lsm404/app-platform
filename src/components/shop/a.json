@@ -1,0 +1,90 @@
+{
+  "product": {
+      "id": 0,
+      "name": "_NAME",
+      "specification": {
+          "AAAA": {
+              "id": 1,
+              "name": "颜色",
+              "specification_item": {
+                  "aa": {
+                      "id": 1,
+                      "name":"红"
+                  },
+                  "bb": {
+                      "id": 2,
+                      "name":"白"
+                  },
+                  "cc": {
+                      "id": 3,
+                      "name":"蓝"
+                  }
+              }
+          },
+          "BBBB": {
+              "id": 2,
+              "name": "尺寸",
+              "specification_item": {
+                  "dd": {
+                      "id": 4,
+                      "name":"大"
+                  },
+                  "ee": {
+                      "id": 5,
+                      "name":"小"
+                  }
+              }
+          }
+      },
+      "goods": {
+          "aa_dd": {
+              "id": 0,
+              "stock": 99,
+              "cost_price": 999,
+              "i1_specification_item_id": 1,
+              "i2_specification_item_id": 4,
+              "i3_specification_item_id": 0
+          },
+          "aa_ee": {
+              "id": 0,
+              "stock": 99,
+              "cost_price": 999,
+              "i1_specification_item_id": 1,
+              "i2_specification_item_id": 5,
+              "i3_specification_item_id": 0
+          },
+          "bb_dd": {
+              "id": 0,
+              "stock": 99,
+              "cost_price": 999,
+              "i1_specification_item_id": 2,
+              "i2_specification_item_id": 4,
+              "i3_specification_item_id": 0
+          },
+          "bb_ee": {
+              "id": 0,
+              "stock": 99,
+              "cost_price": 999,
+              "i1_specification_item_id": 2,
+              "i2_specification_item_id": 5,
+              "i3_specification_item_id": 0
+          },
+          "cc_dd": {
+              "id": 0,
+              "stock": 99,
+              "cost_price": 999,
+              "i1_specification_item_id": 3,
+              "i2_specification_item_id": 4,
+              "i3_specification_item_id": 0
+          },
+          "cc_ee": {
+              "id": 0,
+              "stock": 99,
+              "cost_price": 999,
+              "i1_specification_item_id": 3,
+              "i2_specification_item_id": 5,
+              "i3_specification_item_id": 0
+          }
+      }
+  }
+}

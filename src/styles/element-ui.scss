@@ -1,0 +1,107 @@
+// cover some element-ui styles
+
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+  font-weight: 400 !important;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+
+// to fixed https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+// refine element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+// dropdown
+.el-dropdown-menu {
+  a {
+    display: block
+  }
+}
+
+.el-table{
+  //默认边框
+  border: 1px solid #F0F0F0;
+  //table表头颜色
+  th{
+    background:rgba(248,248,248,1) !important;
+  }
+}
+//inpu背景色
+.el-input-group__prepend{
+  background: #FAFAFA;
+}
+
+.el-tabs__item.is-active{
+  color: var(--theme-color) !important;
+}
+
+.el-tabs__active-bar{
+  background-color: var(--theme-color) !important;
+}
+
+.el-dialog{
+  width: 600px;
+}
+// 根据ui图修改ui控件默认颜色跟随主题色
+.el-radio__input.is-checked+.el-radio__label,
+.el-checkbox__input.is-checked+.el-checkbox__label{
+  color: #666 !important;
+}
+
+.el-radio__input.is-checked .el-radio__inner,
+.el-switch.is-checked .el-switch__core,
+.el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+  border-color: var(--theme-color) !important;
+  background: var(--theme-color) !important;
+}
+.el-checkbox__inner:hover,
+.el-radio__inner:hover,
+.el-radio-button__inner:hover{
+  border-color: var(--theme-color) !important;;
+}
+.el-dialog__body{
+  color: #333;
+}
+.el-radio__label{
+  font-size: 13px;
+}
+.el-radio{
+  margin-right: 10px;
+}
+.el-cascader-node.in-active-path, .el-cascader-node.is-active, .el-cascader-node.is-selectable.in-checked-path{
+  color: var(--theme-color) !important;
+}
+// .el-radio-button__orig-radio:checked+.el-radio-button__inner{
+//   background: var(--theme-color) !important;
+//   border: 1px solid var(--theme-color) !important;
+// }
+// .el-radio-button__inner:hover{
+//   border-color: var(--theme-color) !important;
+//   color: var(--theme-color) !important;
+// }
+
