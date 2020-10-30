@@ -55,11 +55,16 @@
               <img width="100%" :src="dialogImageUrl" alt="">
             </el-dialog>
           </el-form-item>
+          {{uploadDisabled}}
           <el-form-item class="carousel" label="商品轮播：">
             <el-upload
+              ref="upload"
+              :class="{disabled:uploadDisabled}"
               action="https://jsonplaceholder.typicode.com/posts/"
+              :file-list="fileList"
               list-type="picture-card"
-              :limit="3"
+              :limit="5"
+              :on-success="handleAvatarSuccess"
               :on-remove="handleRemove">
               <i class="el-icon-plus"></i>
               <div class="el-upload__tip" slot="tip">图片建议大小800px*800px</div>
@@ -136,7 +141,8 @@ export default {
         currentDelBtn: -1,
         loadingapp: false,
         drag: false
-      }
+      },
+      fileList: []  //  轮播图
     }
   },
   components: {
@@ -150,6 +156,9 @@ export default {
         disabled: false,
         ghostClass: "ghost"
       };
+    },
+    uploadDisabled: function() {
+      return this.fileList.length > 4
     }
   },
   methods: {
@@ -218,7 +227,17 @@ export default {
     },
     handleUploadHttpRequest() {
       console.log('handleUploadHttpRequest')
-    }
+    },
+
+    handleAvatarSuccess(res, file) {
+      console.log({file})
+      this.fileList.push(file)
+    },
+
+    //  移除照片
+    handleRemove(file, fileList) {
+      this.fileList = fileList
+    },
   }
 }
 </script>
@@ -502,6 +521,10 @@ export default {
       .shop-btn {
         width: 100%;
         text-align: right;
+      }
+
+      .disabled .el-upload--picture-card {
+          display: none;
       }
     }
   }
