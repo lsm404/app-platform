@@ -55,7 +55,6 @@
               <img width="100%" :src="dialogImageUrl" alt="">
             </el-dialog>
           </el-form-item>
-          {{uploadDisabled}}
           <el-form-item class="carousel" label="商品轮播：">
             <el-upload
               ref="upload"
