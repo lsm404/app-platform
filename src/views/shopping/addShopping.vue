@@ -44,10 +44,14 @@
         <div class="upload">
           <el-form-item label="商品主图：">
             <el-upload
+              :class="{disabled:mainImgStatus}"
               action="https://jsonplaceholder.typicode.com/posts/"
+              :file-list="mainFileList"
               list-type="picture-card"
+              :limit="1"
               :on-preview="handlePictureCardPreview"
-              :on-remove="handleRemove">
+              :on-success="handleMainSuccess"
+              :on-remove="handleRemoveMain">
               <i class="el-icon-plus"></i>
               <div class="el-upload__tip" slot="tip">图片建议大小800px*800px</div>
             </el-upload>
@@ -141,7 +145,8 @@ export default {
         loadingapp: false,
         drag: false
       },
-      fileList: []  //  轮播图
+      fileList: [],  //  轮播图
+      mainFileList: []  //  主图
     }
   },
   components: {
@@ -157,7 +162,11 @@ export default {
       };
     },
     uploadDisabled: function() {
-      return this.fileList.length > 4
+      return this.fileList.length >= 4
+    },
+
+    mainImgStatus () {
+      return this.mainFileList.length > 0
     }
   },
   methods: {
@@ -184,8 +193,9 @@ export default {
       // }
       // return isJPG && isLt2M;
     },
-    handleRemove() {
+    handleRemoveMain(file, fileList) {
       console.log('handleRemove')
+      this.mainFileList = fileList
     },
     //  显示删除图片的图标
     showDelBtn(index) {
@@ -236,6 +246,11 @@ export default {
     //  移除照片
     handleRemove(file, fileList) {
       this.fileList = fileList
+    },
+
+    //  主图上传成功
+    handleMainSuccess(file, fileList) {
+      this.mainFileList.push(fileList)
     },
   }
 }

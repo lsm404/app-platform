@@ -9,43 +9,43 @@
       <el-table-column
         prop="name"
         label="供应商名称"
-        min-width="200">
+        min-width="150">
       </el-table-column>
 
       <el-table-column
         prop="grade"
         label="供应商等级"
-        min-width="200">
+        min-width="150">
       </el-table-column>
 
       <el-table-column
         prop="add"
         label="已添加商品"
-        min-width="200">
+        min-width="150">
       </el-table-column>
 
       <el-table-column
         prop="productsNumber"
         label="上架商品数"
-        min-width="200">
+        min-width="150">
       </el-table-column>
 
       <el-table-column
         prop="tsactionsNumber"
         label="成交额"
-        min-width="200">
+        min-width="150">
       </el-table-column>
 
       <el-table-column
         prop="time"
         label="最后成交时间"
-        min-width="242">
+        min-width="180">
       </el-table-column>
 
       <el-table-column
         prop="addGrade"
         label="供应商评级"
-        min-width="242">
+        min-width="180">
 
         <template slot-scope="scope">
           <el-select v-model="scope.row.levelValue" placeholder="请选择">
@@ -80,4 +80,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  /deep/ .el-table {
+    color: #606266;
+
+    .el-input__inner {
+      width: 100px;
+    }
+
+  }
 </style>
